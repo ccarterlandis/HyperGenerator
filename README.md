@@ -20,5 +20,5 @@ My configurations quickly got out of hand - I was having to edit a 2000 line JSO
 I would have to find these manually, which was just near impossible.
 
 As a result of this frustration of constantly accidentally breaking my config, I wrote this short Python script that reads the `mappings.txt` file and auto-generates my Karabiner
-config file. Each mapping is either to a shell command or a key code combination, as those are the two primary shortcuts I use. They have a rigorously defined format, but one that
-both easily read and easily edited. As a result, I'll now be able to change my shortcuts confidently as I see fit, allowing me to refine my development process further than I already have.
+config file. Each mapping is either to a shell command or a key code combination, as those are the two primary shortcuts I use. They have a custom and rigorously defined format, but one that
+is both easily read and easily edited. As a result, I'll now be able to change my shortcuts confidently as I see fit, allowing me to refine my development process even further.
