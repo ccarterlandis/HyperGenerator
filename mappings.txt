@@ -19,7 +19,7 @@
 1yper p::shell|open -a 'Simplenote'
 2yper p::shell|open -a 'Discord'
 
-1yper f::shell|open -a 'Brave Browser'
+1yper f::shell|open -a 'Firefox'
 
 1yper g::shell|open -a 'Sublime Text'
 
@@ -78,7 +78,7 @@
 1yper x::code|o,lopt,lctrl
 
 # ???
-2yper period::f2,fn,lctrl
+2yper period::code|f2,fn,lctrl
 
 # ???
 2yper g::code|r,lcmd,lopt,lctrl
