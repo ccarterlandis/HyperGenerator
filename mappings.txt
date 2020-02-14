@@ -1,11 +1,12 @@
 #### Applications ####
+
 1yper r::shell|open -a 'iTerm'
 
 1yper e::shell|open -a 'Finder'
 2yper e::shell|open -a 'Preview'
 
-1yper y::shell|open -a 'Spark'
-2yper y::shell|open -a 'Spotify'
+1yper y::shell|open -a 'ProtonMail'
+2yper y::shell|open -a 'Microsoft Outlook'
 
 1yper u::shell|open -a 'Slack'
 2yper u::shell|open -a 'Trello'
@@ -13,15 +14,15 @@
 1yper i::shell|open -a 'Todoist'
 2yper i::shell|open -a 'Calendar'
 
-1yper o::shell|open -a 'IntelliJ IDEA'
-2yper o::shell|open -a 'JavaFX Scene Builder 2.0.app'
+1yper o::shell|open -a 'Spotify'
+2yper o::shell|open -a 'Simplenote'
 
-1yper p::shell|open -a 'Simplenote'
 2yper p::shell|open -a 'Discord'
 
 1yper f::shell|open -a 'Firefox'
 
 1yper g::shell|open -a 'Sublime Text'
+2yper g::shell|open -a 'Visual Studio Code'
 
 
 #### Window Control ####
@@ -29,26 +30,35 @@
 # Switch windows
 2yper t::code|grave_accent_and_tilde,lcmd
 
-# Close window
-1yper w::code|w,lcmd
+# Quit window
+1yper q::code|q,lcmd
 
 # Show windows
 2yper w::code|up_arrow,lctrl
 
 # Hide & save
 1yper s::code|h,lcmd
-2yper s::code|s,lcmd
 
 # Resize windows
 2yper z::code|left_arrow,lctrl,lopt
 2yper x::code|return_or_enter,lctrl,lopt
 2yper c::code|right_arrow,lctrl,lopt
 
+3yper z::code|d,lctrl,lopt
+3yper x::code|f,lctrl,lopt
+3yper c::code|g,lctrl,lopt
+
 
 #### Navigation ####
+# New tab
+1yper t::code|t,lcmd
+
 # Move tabs
 1yper a::code|open_bracket,lcmd,lshift
 1yper d::code|close_bracket,lcmd,lshift 
+
+# Close tab
+1yper w::code|w,lcmd
 
 # Tab
 2yper a::code|tab,lshift
@@ -56,6 +66,7 @@
 
 # Go back
 2yper f::code|open_bracket,lcmd
+
 
 #### Utility ####
 # Clipboard
@@ -65,23 +76,61 @@
 2yper comma::code|l,lctrl,lcmd
 
 # Signals
-2yper z::code|d,lctrl
-2yper c::code|c,lctrl
+1yper z::code|d,lctrl
+1yper c::code|c,lctrl
 
 # Bartender
 1yper period::code|c,lcmd,lctrl
 
 # Rerun last shell command
-2yper r::code|p,lctrl,lopt
+2yper g::code|p,lctrl,lopt
 
-# ???
-1yper x::code|o,lopt,lctrl
+# Open context menu
+2yper f::code|r,lcmd,lopt,lctrl
 
-# ???
-2yper period::code|f2,fn,lctrl
+# Color picker
+3yper close_bracket::code|close_bracket,lcmd,lopt,lctrl
 
-# ???
-2yper g::code|r,lcmd,lopt,lctrl
+# Brightness down
+3yper comma::code|display_brightness_decrement,fn
+
+# Brightness down
+3yper period::code|display_brightness_increment,fn
+
+# Right click
+3yper semicolon::code|semicolon,lcmd,lopt,lctrl
+
+#### Media Controls ####
+
+# Previous song
+3yper y::code|y,lcmd,lopt,lctrl
+
+# Volume down
+3yper u::code|u,lcmd,lopt,lctrl
+
+# Play/pause
+3yper i::code|i,lcmd,lopt,lctrl
+
+# Volume up
+3yper o::code|o,lcmd,lopt,lctrl
+
+# Next song
+3yper p::code|p,lcmd,lopt,lctrl
+
+# Mute
+3yper open_bracket::code|open_bracket,lcmd,lopt,lctrl
+
+# SpotMini (playlist)
+3yper t::code|t,lcmd,lopt,lctrl,lshift
+
+# Pair MX3s (ToothFairy)
+3yper r::code|r,lcmd,lopt,lctrl
+
+# Pair BlackPods (ToothFairy)
+3yper e::code|e,lcmd,lopt,lctrl
+
+# Pair SRS-XB30 (ToothFairy)
+3yper w::code|w,lcmd,lopt,lctrl
 
 #### Special Keys ####
 1yper slash::code|hyphen
@@ -103,6 +152,7 @@
 1yper semicolon::code|left_arrow,lcmd
 1yper quote::code|right_arrow,lcmd
 
+
 #### Text Selection ####
 # l/u/d/r
 2yper h::code|left_arrow,lopt,lshift
@@ -122,6 +172,7 @@
 1yper b::code|delete_or_backspace
 2yper b::code|delete_or_backspace
 
+
 #### Sublime tab movement ####
 1yper 1::code|1,lctrl
 2yper 1::code|1,lshift,lctrl
@@ -129,9 +180,6 @@
 1yper 2::code|2,lctrl
 2yper 2::code|2,lshift,lctrl
 
-
-
-
-
-
-
+#### IDE Controls ####
+3yper j::code|r,lctrl
+3yper k::code|d,lctrl

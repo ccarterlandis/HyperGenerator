@@ -365,6 +365,3 @@ with open("../../../.config/karabiner/karabiner.json", "r") as config_file:
 
 with open("../../../.config/karabiner/karabiner.json", "w") as config_file:
     config_file.write(json.dumps(config, indent=4))
-
-with open("../../../.config/karabiner/karabiner.json", "r") as config_file:
-    print(config_file.readlines())
