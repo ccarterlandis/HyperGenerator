@@ -356,7 +356,7 @@ with open("mappings.txt", 'r') as mappings_file:
     mappings = [mapping.rstrip() for mapping in mappings_file.readlines() if mapping[0].rstrip() not in ("#", None, "")]
     for index, mapping in enumerate(mappings):
         mapping = mapping.rstrip()
-        if mapping[0] is not "#" and mapping is not None:
+        if mapping[0] != "#" and mapping != None:
             config['profiles'][0]['complex_modifications']['rules'][0]['manipulators'].append(add_rule(mapping))
 
 with open("../../../.config/karabiner/karabiner.json", "r") as config_file:

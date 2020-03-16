@@ -17,6 +17,7 @@
 1yper o::shell|open -a 'Spotify'
 2yper o::shell|open -a 'Simplenote'
 
+1yper p::shell|open -a 'Riot'
 2yper p::shell|open -a 'Discord'
 
 1yper f::shell|open -a 'Firefox'
@@ -100,6 +101,11 @@
 # Right click
 3yper semicolon::code|semicolon,lcmd,lopt,lctrl
 
+# tmux prefix key remap
+1yper backslash::code|b,lctrl
+
+
+
 #### Media Controls ####
 
 # Previous song
@@ -135,6 +141,7 @@
 #### Special Keys ####
 1yper slash::code|hyphen
 2yper slash::code|equal_sign
+3yper slash::code|grave_accent_and_tilde,lshift
 
 1yper spacebar::code|hyphen,lshift
 
@@ -147,6 +154,9 @@
 1yper l::code|right_arrow,lopt
 1yper n::code|left_arrow
 1yper m::code|right_arrow
+
+3yper h::code|left_arrow
+3yper l::code|right_arrow
 
 # line
 1yper semicolon::code|left_arrow,lcmd
@@ -169,7 +179,6 @@
 1yper v::code|delete_or_backspace,lopt
 2yper v::code|delete_or_backspace,lcmd
 
-1yper b::code|delete_or_backspace
 2yper b::code|delete_or_backspace
 
 
