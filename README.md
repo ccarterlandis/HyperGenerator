@@ -1,24 +1,20 @@
-# HyperGenerator
+# hyper-helper
 -----------------
-I use [Karabiner Elements](https://pqrs.org/osx/karabiner/) to implement my keyboard shortcuts. 
-When I first stumbled upon it, I recall finding what I thought was the most useful shortcut in the world:
-remapping the useless Caps Lock (which is taking up prime real estate) into a whole new modifier key which
-was easily programmable and flexible. I've never looked back.
+I use [Karabiner Elements](https://pqrs.org/osx/karabiner/) to implement my "Hyper Mode" keyboard shortcuts. Simply put, I remap Caps Lock to a custom "Hyper" modifier key, and then use the new "Hyper" key to run scripts or input other keyboard shortcut in a more convenient way.
 
-One constant pain point, however, was actually configuring these shortcuts. For all its praise, Karabiner
-for some god-forsaken reason uses JSON as its config file. I detest JSON as config for many, many reasons,
-but primarily for its lack of comments - which are essential in any configuration file - and its highly structured nature.
-JSON was designed to enable communication between programs: that is, a program creates it, and a program consumes it.
-While humans do write these programs which create the JSON, very rarely do they have to edit it manually: it's usually generated for them.
-JSON is at its core a data transfer format, not a markup language.
+Useful as they were, actually configuring these shortcuts was hellish. Karabiner uses JSON as its config file, and when you have 87 shortcuts that each take up at least 5 or 6 lines, you end up with a 2200 line JSON file that has to be edited by hand. In the year 2020 nobody should have to edit a 2200 line JSON file by hand, or at least if they don't want to.
 
-Using something like YAML, on the other hand, is much easier for a human to read, and still easy for a machine to parse. It's only every written by a human,
-so it's easily understood and changed, unlike JSON's rigorous KVP structure.
+As a result of my pent-up frustration at accidentally breaking my config every time I changed, I wrote this short Python script that reads a `mappings.txt` file and generates the Karabiner
+config file. Each mapping is either to a shell command or a key code combination. They have a custom format, one that is admittedly not the easiest to read but is far more easily edited than a JSON file. If you want to view my mappings file, you can find it [here](https://raw.githubusercontent.com/ccarterlandis/dotfiles/master/.config/hyper-helper/mappings.txt) with all my other dotfiles. To generate them, after you install Karabiner place a `mappings.txt` file in your `$HOME/.config/hyper-helper/` directory. Then, clone this repo and run `create.py` with a valid Python 3.6+ interpreter.
 
-My configurations quickly got out of hand - I was having to edit a 2000 line JSON file any time I wanted to update my shortcuts. However, if I missed a single
-`}` or `]`, the whole config would be rendered invalid and my shortcuts would disappear until I fixed the issue. Before recent improvements to the logging of Karabiner,
-I would have to find these manually, which was just near impossible.
+TL;DR
 
-As a result of this frustration of constantly accidentally breaking my config, I wrote this short Python script that reads the `mappings.txt` file and auto-generates my Karabiner
-config file. Each mapping is either to a shell command or a key code combination, as those are the two primary shortcuts I use. They have a custom and rigorously defined format, but one that
-is both easily read and easily edited. As a result, I'll now be able to change my shortcuts confidently as I see fit, allowing me to refine my development process even further.
+```bash
+
+$ cd $HOME/
+$ curl -o .config/hyper-helper/mappings.txt https://raw.githubusercontent.com/ccarterlandis/dotfiles/master/.config/hyper-helper/mappings.txt
+$ git clone https://github.com/ccarterlandis/hyper-helper.git
+# assuming you have Python 3.6 is installed under python3
+$ python3 hyper-helper/create.py
+
+```

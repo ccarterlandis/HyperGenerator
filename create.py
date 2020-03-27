@@ -1,4 +1,5 @@
 import json
+import os
 
 config = json.loads(
 """
@@ -295,7 +296,7 @@ KEY_ABBREVIATIONS = {
 def add_rule(mapping):
     mapping = mapping.strip().split("::")
     mapping[0] = mapping[0].split(" ")
-    mapping[1] = mapping[1].split("|")
+    mapping[1] = mapping[1].split(" > ")
     if mapping[1][0] == 'code':
         mapping[1][1] = mapping[1][1].split(",")
         template = """
@@ -352,16 +353,17 @@ def add_rule(mapping):
 
         return template
 
-with open("mappings.txt", 'r') as mappings_file:
+with open(f"{os.getenv('HOME')}/.config/hyper-helper/mappings.txt", 'r') as mappings_file:
     mappings = [mapping.rstrip() for mapping in mappings_file.readlines() if mapping[0].rstrip() not in ("#", None, "")]
     for index, mapping in enumerate(mappings):
         mapping = mapping.rstrip()
         if mapping[0] != "#" and mapping != None:
             config['profiles'][0]['complex_modifications']['rules'][0]['manipulators'].append(add_rule(mapping))
+    print(len(config['profiles'][0]['complex_modifications']['rules'][0]['manipulators']))
 
-with open("../../../.config/karabiner/karabiner.json", "r") as config_file:
+with open(f"{os.getenv('HOME')}/.config/karabiner/karabiner.json", "r") as config_file:
     with open("karabiner_backup.json", "w") as backup_file:
         backup_file.writelines(config_file.readlines())
 
-with open("../../../.config/karabiner/karabiner.json", "w") as config_file:
+with open(f"{os.getenv('HOME')}/.config/karabiner/karabiner.json", "w") as config_file:
     config_file.write(json.dumps(config, indent=4))

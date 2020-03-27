@@ -272,7 +272,7 @@
                                 },
                                 "to": [
                                     {
-                                        "shell_command": "open -a 'Riot'"
+                                        "shell_command": "open -a 'Navicat for PostgreSQL'"
                                     }
                                 ],
                                 "type": "basic"
@@ -856,6 +856,27 @@
                                             "left_command",
                                             "left_control"
                                         ]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "period",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_command",
+                                            "right_command",
+                                            "right_shift",
+                                            "right_option",
+                                            "right_control"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "f4",
+                                        "modifiers": []
                                     }
                                 ],
                                 "type": "basic"
