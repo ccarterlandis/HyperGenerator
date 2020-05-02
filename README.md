@@ -1,3 +1,5 @@
+**May 2020 update: I recently switched to using an Ergodox EZ as my daily driver, instead of the generic mechanical keyboard I was using before. That keyboard essentially replaces all of the functionality of Karabiner, so I won't be maintaining this anymore. I will still use Karabiner for when I'm on the go, but it's highly unlikely I'll make any significant changes.**
+
 # hyper-helper
 -----------------
 I use [Karabiner Elements](https://pqrs.org/osx/karabiner/) to implement my "Hyper Mode" keyboard shortcuts. Simply put, I remap Caps Lock to a custom "Hyper" modifier key, and then use the new "Hyper" key to run scripts or input other keyboard shortcut in a more convenient way.
